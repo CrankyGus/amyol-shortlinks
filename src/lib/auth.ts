@@ -25,4 +25,5 @@ export const authOpts: NextAuthOptions = {
   pages: {
     signIn: "/signin",
   },
+  callbacks: {},
 };

@@ -7,10 +7,7 @@ import { BiLogoDiscord, BiLogoGithub, BiLogoGoogle } from "react-icons/bi";
 
 export const GitHubButton = () => {
   return (
-    <Button
-      onClick={() => signIn("github")}
-      className="mb-2 w-full bg-gray-900"
-    >
+    <Button onClick={() => signIn("github")} className="mb-2 w-full">
       <BiLogoGithub className="mr-2 text-center text-lg " />
       Sign in with Github
     </Button>
