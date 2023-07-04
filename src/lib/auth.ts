@@ -22,6 +22,11 @@ export const authOpts: NextAuthOptions = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
   ],
+  callbacks: {
+    async redirect({ url, baseUrl }) {
+      return baseUrl;
+    },
+  },
   pages: {
     signIn: "/signin",
   },
