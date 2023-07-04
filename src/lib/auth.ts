@@ -22,10 +22,8 @@ export const authOpts: NextAuthOptions = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
   ],
-  callbacks: {
-    async redirect({ url, baseUrl }) {
-      return baseUrl;
-    },
+  session: {
+    strategy: "jwt",
   },
   debug: true,
   // pages: {
