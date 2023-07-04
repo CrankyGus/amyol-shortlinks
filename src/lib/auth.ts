@@ -4,10 +4,10 @@ import DiscordProvider from "next-auth/providers/discord";
 import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
 import prisma from "./prisma";
-import { Adapter } from "next-auth/adapters";
+import type { Adapter } from "next-auth/adapters";
 
 export const authOpts: NextAuthOptions = {
-  adapter: PrismaAdapter(prisma) as Adapter,
+  adapter: PrismaAdapter(prisma) as Adapter<boolean>,
   providers: [
     DiscordProvider({
       clientId: process.env.DISCORD_CLIENT_ID,
@@ -27,6 +27,7 @@ export const authOpts: NextAuthOptions = {
       return baseUrl;
     },
   },
+  debug: true,
   // pages: {
   //   signIn: "/signin",
   // },
