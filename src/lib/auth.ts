@@ -27,8 +27,8 @@ export const authOpts: NextAuthOptions = {
       return baseUrl;
     },
   },
-  pages: {
-    signIn: "/signin",
-  },
+  // pages: {
+  //   signIn: "/signin",
+  // },
   secret: process.env.NEXTAUTH_SECRET,
 };
