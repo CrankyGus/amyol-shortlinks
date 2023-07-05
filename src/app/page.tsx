@@ -13,7 +13,7 @@ export default async function Home() {
     "__Secure-next-auth.session-token"
   );
 
-  if (!sessionCookie || !sessionCookieSecure) return redirect("/signin");
+  if (!session) return redirect("/signin");
   console.log(session);
 
   return (
