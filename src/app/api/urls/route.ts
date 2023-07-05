@@ -7,10 +7,13 @@ export async function GET(request: Request) {
   const session = cookieStore.get("next-auth.session-token");
   const sessionId = session?.value;
 
-  if (sessionId) {
+  const sessionSecure = cookieStore.get("__Secure-next-auth.session-token");
+  const sessionSecureId = sessionSecure?.value;
+
+  if (sessionId || sessionSecureId) {
     const sessionFind = await prisma.session.findUnique({
       where: {
-        sessionToken: sessionId,
+        sessionToken: sessionId || sessionSecureId,
       },
       include: {
         user: true,
