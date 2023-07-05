@@ -22,9 +22,6 @@ export const authOpts: NextAuthOptions = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
   ],
-  session: {
-    strategy: "jwt",
-  },
   debug: true,
   // pages: {
   //   signIn: "/signin",
