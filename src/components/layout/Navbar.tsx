@@ -74,7 +74,7 @@ function Navbar() {
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
-          {!session ? <Button>FAQ</Button> : null}
+          {!session ? <Button disabled>FAQ</Button> : null}
         </div>
       </div>
       <Modal />

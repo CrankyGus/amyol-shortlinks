@@ -65,7 +65,11 @@ function SignInComponent() {
         <GitHubButton />
         <Separator className="my-4" />
         <div className="flex w-full items-center">
-          <Button className="w-full overflow-hidden" variant="destructive">
+          <Button
+            className="w-full overflow-hidden"
+            variant="destructive"
+            disabled
+          >
             Need Help?
           </Button>
         </div>
