@@ -39,11 +39,11 @@ function ModalComponent() {
           <CardTitle>Setting</CardTitle>
           <CardDescription>Manage appearance and cookies</CardDescription>
         </CardHeader>
-        <CardContent className="text-xs">
+        <CardContent className=" text-xs">
           <div className="mb-4 flex items-center">
             <h1 className="capitalize">appearance </h1>
             <Select onValueChange={(e) => setTheme(e)}>
-              <SelectTrigger className="mx-4 h-6 w-[180px]">
+              <SelectTrigger className="mx-4 h-6 w-[180px] overflow-hidden">
                 <SelectValue placeholder="Select Theme" />
               </SelectTrigger>
               <SelectContent>
@@ -56,7 +56,7 @@ function ModalComponent() {
           <div className="mb-6 flex items-center">
             <h1 className="capitalize">show profile </h1>
             <Select>
-              <SelectTrigger className="mx-4 h-6 w-[180px]">
+              <SelectTrigger className="mx-4 h-6 w-[180px] overflow-hidden">
                 <SelectValue placeholder="Select" />
               </SelectTrigger>
               <SelectContent>
@@ -70,15 +70,16 @@ function ModalComponent() {
               id="terms1"
               checked={isCookieAccepted}
               onClick={() => setIsCookieAccepted(!isCookieAccepted)}
+              disabled
             />
-            <div className="grid gap-1.5 leading-none">
+            <div className="grid gap-1.5 leading-none ">
               <label
                 htmlFor="terms1"
-                className=" font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                className=" overflow-hidden font-medium  leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
               >
                 Cookie Policy
               </label>
-              <p className=" text-muted-foreground">
+              <p className=" overflow-hidden text-muted-foreground">
                 You have control over the use of cookies, allowing you to manage
                 and customize your preferences. This includes the ability to
                 withdraw or revoke your consent at any time.
