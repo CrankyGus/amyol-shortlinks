@@ -18,10 +18,13 @@ import {
 } from "@/components/buttons";
 import { Separator } from "@/components/ui/separator";
 import SignInComponent from "@/components/signIn";
+import { authOpts } from "@/lib/auth";
+import { getServerSession } from "next-auth";
 
-function LoginPage() {
+async function LoginPage() {
   const cookieStore = cookies();
-  const session = cookieStore.get("next-auth.session-token");
+  const session = await getServerSession(authOpts);
+
   if (session) redirect("/");
   return (
     <div className=" flex min-h-[70vh] items-center justify-center">
