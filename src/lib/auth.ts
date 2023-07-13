@@ -22,9 +22,9 @@ export const authOpts: NextAuthOptions = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
   ],
-  debug: true,
-  // pages: {
-  //   signIn: "/signin",
-  // },
+  // debug: true,
+  pages: {
+    signIn: "/signin",
+  },
   secret: process.env.NEXTAUTH_SECRET,
 };

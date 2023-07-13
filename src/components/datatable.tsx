@@ -32,6 +32,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Skeleton } from "./ui/skeleton";
+import { useRouter } from "next/navigation";
 
 interface IData {
   authorId: string;
@@ -41,6 +42,7 @@ interface IData {
 }
 
 function Datatable() {
+  const router = useRouter();
   const [data, setData] = useState<IData[]>([
     {
       authorId: "",
@@ -62,6 +64,7 @@ function Datatable() {
     const res = await fetch(`/api/urls/${id}`, {
       method: "DELETE",
     });
+    router.refresh();
     console.log(res.json());
   }
 
